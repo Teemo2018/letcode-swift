@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+
+class Solution {
+	func maxSubArray(_ nums: [Int]) -> Int {
+		var res = Int.min
+		var tmp = 0
+		nums.forEach { num in
+			tmp = max(tmp + num, num)
+			res = max(res, tmp)
+		}
+		return res
+	}
+}
